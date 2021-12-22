@@ -16,5 +16,10 @@ pipeline {
                 echo 'tests completed!'
             }
         }
-    }
+        post {
+            always {
+                junit '**/target/surefire-reports/TEST-*.xml'
+            }
+        } 
+    } 
 }
